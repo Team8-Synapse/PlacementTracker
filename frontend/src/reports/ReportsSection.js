@@ -2,8 +2,7 @@ import React, { useState, useMemo } from "react";
 import { 
   Download, 
   Printer, 
-  FileText, 
-  Calendar, 
+  FileText,  
   TrendingUp,
   BarChart3,
   FileSpreadsheet,
