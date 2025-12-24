@@ -6,7 +6,7 @@ import { theme } from "../theme/theme";
 export default function Navbar({ darkMode, setDarkMode }) {
   return (
     <header style={{ 
-      background: darkMode ? "#2c2c2c" : theme.maroon, 
+      background: darkMode?  theme.beigeDark : theme.maroon, 
       color: "white", 
       padding: "16px 32px",
       boxShadow: theme.shadow,
