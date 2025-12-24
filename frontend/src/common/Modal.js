@@ -1,5 +1,6 @@
 import React from "react";
-import { theme } from "../data/constants";
+import { theme } from "../theme/theme";
+
 
 /* ===================== MODAL ===================== */
 export default function Modal({ children, onClose }) {

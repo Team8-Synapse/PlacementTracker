@@ -1,5 +1,5 @@
 import React from "react";
-import { theme } from "../data/constants";
+import { theme } from "../theme/theme";
 import { BarChart3, Users, TrendingUp, FileText, Activity } from "lucide-react";
 
 export default function TabNavigation({ activeTab, setActiveTab, darkMode }) {

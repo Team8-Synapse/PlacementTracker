@@ -37,26 +37,8 @@ import {
   Cell
 } from "recharts";
 
-/* ===================== THEME ===================== */
-const theme = {
-  maroon: "#8B0000",
-  maroonLight: "#A52A2A",
-  beige: "#F5F5DC",
-  beigeLight: "#EFEFD0",
-  beigeDark: "#E8E8D0",
-  success: "#22c55e",
-  successLight: "#4ade80",
-  danger: "#ef4444",
-  warning: "#f59e0b",
-  info: "#3b82f6",
-  infoLight: "#60a5fa",
-  purple: "#a855f7",
-  pink: "#ec4899",
-  text: "#1f2937",
-  textLight: "#6b7280",
-  border: "#e5e7eb",
-  shadow: "0 2px 8px rgba(0,0,0,0.1)"
-};
+import { theme } from "../theme/theme";
+
 
 /* ===================== UI HELPERS ===================== */
 const Card = ({ children, darkMode }) => (

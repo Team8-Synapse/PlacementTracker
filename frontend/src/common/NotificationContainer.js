@@ -1,5 +1,6 @@
 import React from "react";
-import { theme } from "../data/constants";
+import { theme } from "../theme/theme";
+
 
 export default function NotificationContainer({ notifications }) {
   return (
