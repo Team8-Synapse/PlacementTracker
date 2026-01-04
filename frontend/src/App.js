@@ -1,4 +1,7 @@
 import React, { useState, useMemo, useEffect, useCallback } from "react";
+import { useAuth } from "./auth/AuthContext";
+import Login from "./auth/Login";
+
 
 import {
   BarChart, Bar,
@@ -48,6 +51,8 @@ import Dashboard from "./dashboard/Dashboard";
 
 /* ===================== MAIN APP ===================== */
 export default function App() {
+  const { user } = useAuth();
+
   const [students, setStudents] = useState(() => {
     const saved = loadFromStorage();
     return saved?.students || initialStudents;
