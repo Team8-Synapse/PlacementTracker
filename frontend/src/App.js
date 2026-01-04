@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { useAuth } from "./auth/AuthContext";
 import Login from "./auth/Login";
+import { ROLE_PERMISSIONS } from "./auth/roles";
 
 
 import {
@@ -52,7 +53,7 @@ import Dashboard from "./dashboard/Dashboard";
 /* ===================== MAIN APP ===================== */
 export default function App() {
   const { user } = useAuth();
-
+  const allowedTabs = ROLE_PERMISSIONS[user.role]?.tabs || [];
   const [students, setStudents] = useState(() => {
     const saved = loadFromStorage();
     return saved?.students || initialStudents;
@@ -380,7 +381,7 @@ export default function App() {
         </>
       )}
       
-      {activeTab === "analytics" && (
+      {activeTab === "analytics" && allowedTabs.includes("analytics") && (
         <AdvancedAnalytics 
           students={students} 
           chartData={chartData}

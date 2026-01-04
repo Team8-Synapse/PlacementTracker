@@ -1,15 +1,22 @@
 import React from "react";
 import { theme } from "../theme/theme";
 import { BarChart3, Users, TrendingUp, FileText, Activity } from "lucide-react";
+import { useAuth } from "../auth/AuthContext";
+import { ROLE_PERMISSIONS } from "../auth/roles";
 
 export default function TabNavigation({ activeTab, setActiveTab, darkMode }) {
+  const { user } = useAuth();
+
+  const allowedTabs = ROLE_PERMISSIONS[user?.role || "student"].tabs;
+
   const tabs = [
-    { id: "dashboard", label: "Dashboard", icon: <BarChart3 size={16} /> },
-    { id: "students", label: "Students", icon: <Users size={16} /> },
-    { id: "analytics", label: "Analytics", icon: <TrendingUp size={16} /> },
-    { id: "reports", label: "Reports", icon: <FileText size={16} /> },
-    { id: "comparison", label: "Compare", icon: <Activity size={16} /> },
-  ];
+    { id: "dashboard", label: "Dashboard" },
+    { id: "students", label: "Students" },
+    { id: "analytics", label: "Analytics" },
+    { id: "reports", label: "Reports" },
+    { id: "comparison", label: "Comparison" },
+  ].filter(tab => allowedTabs.includes(tab.id));
+
 
   return (
     <nav style={{
