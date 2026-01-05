@@ -382,13 +382,14 @@ export default function App() {
       )}
       
       {activeTab === "analytics" && allowedTabs.includes("analytics") && (
-        <AdvancedAnalytics 
-          students={students} 
-          chartData={chartData}
-          stats={stats}
-          darkMode={darkMode}
-        />
-      )}
+      <AdvancedAnalytics
+        students={students}
+        chartData={chartData}
+        stats={stats}
+        darkMode={darkMode}
+      />
+    )}
+
       
       {activeTab === "reports" && (
         <ReportsSection 

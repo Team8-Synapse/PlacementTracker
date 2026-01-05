@@ -6,16 +6,17 @@ import { ROLE_PERMISSIONS } from "../auth/roles";
 
 export default function TabNavigation({ activeTab, setActiveTab, darkMode }) {
   const { user } = useAuth();
-
   const allowedTabs = ROLE_PERMISSIONS[user?.role || "student"].tabs;
 
+
   const tabs = [
-    { id: "dashboard", label: "Dashboard" },
-    { id: "students", label: "Students" },
-    { id: "analytics", label: "Analytics" },
-    { id: "reports", label: "Reports" },
-    { id: "comparison", label: "Comparison" },
-  ].filter(tab => allowedTabs.includes(tab.id));
+  { id: "dashboard", label: "Dashboard" },
+  { id: "students", label: "Students" },
+  { id: "analytics", label: "Analytics" },
+  { id: "reports", label: "Reports" },
+  { id: "comparison", label: "Comparison" },
+].filter(tab => allowedTabs.includes(tab.id));
+
 
 
   return (
@@ -32,7 +33,7 @@ export default function TabNavigation({ activeTab, setActiveTab, darkMode }) {
           onClick={() => setActiveTab(tab.id)}
           style={{
             background: activeTab === tab.id ? (darkMode ? "#444" : theme.maroon) : "transparent",
-            color: "white",
+            color: "black",
             border: "none",
             padding: "12px 24px",
             cursor: "pointer",
