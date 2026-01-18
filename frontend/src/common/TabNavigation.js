@@ -41,7 +41,7 @@ export default function TabNavigation({ activeTab, setActiveTab, darkMode }) {
             alignItems: "center",
             gap: 8,
             fontSize: 14,
-            fontWeight: activeTab === tab.id ? "600" : "400",
+            fontWeight : activeTab === tab.id ? "600" : "400",
             borderRadius: "8px 8px 0 0",
             transition: "all 0.2s"
           }}
